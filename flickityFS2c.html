@@ -1,0 +1,92 @@
+<!DOCTYPE html><!-- flickity fullpage test with fancybox-->
+<!--http://codepen.io/creaturelab/pen/qdLdVM-->
+<!--another test
+http://codepen.io/littleredbowtie/pen/QbeMop-->
+<html lang="en">
+
+<head>
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+	<style>
+	body {
+    background-color: #b0c4de;
+	}
+		.gallery img {
+		  height: 370px;
+		  margin-right: 5px;
+		}
+		
+	</style>
+
+</head>
+ 
+<body>
+<p></p><p></p><p></p>
+
+	<div container>
+
+	<a rel="group" class="gallery" title="title 2" href="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg"></a>
+
+	<a rel="group" class="gallery" title="title 3" href="http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg" ><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg"></a> 
+
+	<a rel="group" class="gallery" title="title 1" href="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg"></a> 
+
+	</div container>
+	
+<p></p><p></p><p></p>
+<div container>
+		<div class="gallery">
+			<div class="gallery-cell">
+			<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg" alt="">
+			</div>
+
+			<div class="gallery-cell">
+			<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg" alt="">
+			</div>
+
+			<div class="gallery-cell">
+			<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg" alt="">
+			</div>
+
+			<div class="gallery-cell">
+			<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg" alt="">
+			</div>
+		</div>
+</div container>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+<script>
+	  $(document).ready(function() {
+		$("a.gallery").fancybox(); 
+	  // Define flickity carousel
+	  var $gallery = $('.gallery').flickity({
+	    imagesLoaded: true,
+	    percentPosition: false,
+	    wrapAround: true,
+	    pageDots: false
+	  });
+
+	  var flkty = $gallery.data('flickity');
+
+	  $gallery.on('staticClick', function(event, pointer, cellElement, cellIndex) {
+	    // Do nothing if cell was not clicked
+		    if (!cellElement) {
+		      return;
+		    }
+	    // Find image url and use it to tell Fancybox what to target
+		    var $zoomurl = $(cellElement).find('img').attr('src');
+		    $.fancybox($zoomurl);
+		});
+	  });
+</script>
+
+
+
+</body>
+
+</html>

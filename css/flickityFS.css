@@ -1,0 +1,55 @@
+
+.gallery img {
+  height: 370px;
+  margin-right: 5px;
+}
+
+
+
+
+body {
+    height: auto;
+    width: 100%;
+    margin-right: auto;  
+    font-family: ETBembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    background-color: #111;
+    color: #fffff8;
+
+}
+
+/*img.resize{
+    width:50%;  you can use % 
+    height: auto;
+}*/
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.section {
+    display: table;
+    width: 100%;
+    height: 200;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    
+    background: url("http://placekitten.com/g/200/300" alt="Smiley face" width="820" height="820">) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.section .about-section{
+    display: table-cell;
+    vertical-align: 50%;
+    margin: 80px auto;
+    vertical-align: 50%;
+    margin: 80px auto;
+    line-height: 10em;
+    padding: 100px 0;
+}
+ 

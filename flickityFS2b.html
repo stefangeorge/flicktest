@@ -1,0 +1,149 @@
+<!DOCTYPE html><!-- flickity fullpage test with fancybox-->
+<!--http://codepen.io/creaturelab/pen/qdLdVM-->
+<html lang="en">
+
+<head>
+	<style>
+		.gallery img {
+		  height: 370px;
+		  margin-right: 5px;
+		}
+		
+	</style>
+	
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+</head>
+ 
+<body>
+ <p></p>
+<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg" alt="">
+
+<div container>
+
+			<a rel="group" class="gallery" title="title 1" href="img/1-WarHero/1-DSC_0114.jpg"><img src="img/1-WarHero/thumbs/1-DSC_0114.jpg"></a> 
+			<a rel="group" class="gallery" title="title 2" href="img/1-WarHero/2-_DSC1288.jpg"><img src="img/1-WarHero/thumbs/2-_DSC1288.jpg"></a> 
+			<a rel="group" class="gallery" title="title 3" href="img/1-WarHero/3-DSC_0432.jpg" ><img src="img/1-WarHero/thumbs/3-DSC_0432.jpg"></a> 
+</div container>
+
+<div container>
+  <div class="row">
+    <div class="col-xs-12">
+		<div class="gallery">
+			<div class="gallery-cell">
+			<!--   <div class="gallery-cell img">--> 
+			<img src="./img/1-WarHero/4-DSC_0466.jpg">
+			 <!--  </div> -->
+			</div>
+
+			<div class="gallery-cell">
+			<!--  <div class="gallery-cell img">-->  
+			<img src="./img/1-WarHero/5-DSC_0351.jpg">
+			<!--	</div>-->
+			</div>
+
+			<div class="gallery-cell">
+		 <!--  <div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/6-DSC_0357.jpg">
+		<!--	</div> -->
+			</div>
+
+			<div class="gallery-cell">
+		<!--	<div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/7-DSC_0368.jpg">
+		<!--	 </div> -->
+			</div>
+
+			<div class="gallery-cell">
+		<!--	 <div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/8-DSC_0370.jpg">
+		<!--	 </div> -->
+			</div>
+
+			<div class="gallery-cell">
+		<!--	<div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/9-DSC_0374.jpg">
+		<!--	</div> -->
+			</div>
+
+			<div class="gallery-cell">
+		 <!--  <div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/10-DSC_0385.jpg">
+		 <!--   </div> -->
+			</div>
+
+			<div class="gallery-cell">
+		<!--	<div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/11-DSC_0387.jpg">
+		<!--	 </div> -->
+			 </div>
+
+			<div class="gallery-cell">
+			<!--  <div class="gallery-cell img"> -->
+			 <img src="./img/1-WarHero/12-DSC_0390.jpg">
+		<!--	 </div> -->
+			 </div>
+
+			<div class="gallery-cell">
+		<!--	<div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/13-DSC_0391.jpg">
+			<!--   </div> -->
+			</div>
+
+			<div class="gallery-cell">
+			<!--  <div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/14-DSC_0399.jpg">
+			<!--	 </div> -->
+			</div>
+
+			<div class="gallery-cell">
+		<!--   <div class="gallery-cell img"> -->
+			<img src="./img/1-WarHero/15-DSC_0400.jpg">
+		<!--	</div> -->
+			</div>
+    </div>
+  </div>
+</div>
+</div container>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	  $(document).ready(function() {
+$("a.gallery").fancybox(); 
+	  // Define flickity carousel
+	  var $gallery = $('.gallery').flickity({
+	    imagesLoaded: true,
+	    percentPosition: false,
+	    wrapAround: true,
+	    pageDots: false
+	  });
+
+	  var flkty = $gallery.data('flickity');
+
+	  $gallery.on('staticClick', function(event, pointer, cellElement, cellIndex) {
+	    // Do nothing if cell was not clicked
+		    if (!cellElement) {
+		      return;
+		    }
+	    // Find image url and use it to tell Fancybox what to target
+		    var $zoomurl = $(cellElement).find('img').attr('src');
+		    $.fancybox($zoomurl);
+		});
+	  });
+</script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+</body>
+
+</html>

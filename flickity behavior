@@ -1,0 +1,9 @@
+when> 784 pix   then a vertical jump occurs
+gradually stretches then 
+when >976   jumps to narrow again
+
+changing to:
+.gallery-cell img {
+ display: block;
+  max-width: inherit !important;
+  max-height: inherit !important;
